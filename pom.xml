@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.4.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>pl.ziemowit.contact</groupId>
+    <artifactId>contact-management-system</artifactId>
+    <version>1.0.0</version>
+    <name>contact-management-system</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>10</java.version>
+        <spring-fox.verions>2.9.2</spring-fox.verions>
+        <docker-plugin.version>1.4.10</docker-plugin.version>
+        <spock-spring.version>1.3-groovy-2.5</spock-spring.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${spring-fox.verions}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${spring-fox.verions}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-spring</artifactId>
+            <version>${spock-spring.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>com.spotify</groupId>-->
+<!--                <artifactId>dockerfile-maven-plugin</artifactId>-->
+<!--                <version>${docker-plugin.version}</version>-->
+<!--                <configuration>-->
+<!--                    <repository>ziemowit/${project.artifactId}</repository>-->
+<!--                    <buildArgs>-->
+<!--                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>-->
+<!--                    </buildArgs>-->
+<!--                </configuration>-->
+<!--                <dependencies>-->
+<!--                    <dependency>-->
+<!--                        <groupId>javax.activation</groupId>-->
+<!--                        <artifactId>activation</artifactId>-->
+<!--                        <version>1.1.1</version>-->
+<!--                    </dependency>-->
+<!--                </dependencies>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>default</id>-->
+<!--                        <goals>-->
+<!--                            <goal>build</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>jcenter-snapshots</id>
+            <name>jcenter</name>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
+    </repositories>
+
+</project>

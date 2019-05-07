@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      database: db_contact
+
+server:
+  servlet:
+    context-path: /contacts-management-system
